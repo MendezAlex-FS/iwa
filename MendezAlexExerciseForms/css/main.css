@@ -77,7 +77,6 @@ input[type="checkbox"] {
 }
 
 #form-check {
-  width: 40%;
   height: 29px;
   display: flex;
   align-items: flex-end;
@@ -132,6 +131,7 @@ a:hover {
   text-decoration: none;
   transition: all 200ms ease;
   width: 105px;
+  margin: auto;
 }
 
 .inside {
@@ -216,6 +216,11 @@ a:hover {
     justify-content: center;
     gap: 1rem 2rem;
     padding-inline-start: 0;
+  }
+
+  #wrapper {
+    width: 95%;
+    padding: 0.25rem;
   }
 }
 @media (max-width: 836px) {
