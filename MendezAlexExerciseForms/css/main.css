@@ -1,0 +1,229 @@
+/* General Styles*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  margin: 0rem;
+}
+
+/* Element styles */
+
+header {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+  width: 50%;
+  max-width: 18.75rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem 0;
+  text-align: center;
+  text-shadow: 15px 15px 15px #556b2f;
+  color: #1f301c;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #556b2f;
+}
+
+h3 {
+  color: #556b2f;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin: 1rem 0 0;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.3rem 0.3rem;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0;
+  margin-top: 0.25rem;
+  vertical-align: middle;
+}
+
+#form-check {
+  width: 40%;
+  height: 29px;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+label[for="signup"] {
+  margin-bottom: 0.25rem;
+}
+
+/* Image styles */
+
+img {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+/* Link styles */
+
+a {
+  text-decoration: none;
+  color: darkolivegreen;
+}
+
+a:hover {
+  color: #595035;
+}
+
+/* Wrapper styles */
+
+#wrapper {
+  border-left: 5px double darkolivegreen;
+  border-right: 5px double darkolivegreen;
+  width: 80%;
+  margin: auto;
+  padding: 1.25rem;
+  box-shadow: 0 0 20px darkolivegreen;
+}
+
+/* Class Styles  */
+
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
+/* Special button styles */
+
+.button-wrapper {
+  position: relative;
+  text-decoration: none;
+  transition: all 200ms ease;
+  width: 105px;
+}
+
+.inside {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.button {
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(178.4deg, #8f9c8d 4.8%, #1f301c 86.7%);
+  padding: 1em 1.5em;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #1f301c;
+  display: block;
+  transition: all 200ms ease;
+  position: relative;
+  margin: 3px;
+  width: 100px;
+}
+
+.button:hover {
+  background: linear-gradient(178.4deg, #8f9c8d 100%, #1f301c 100%);
+}
+
+.button-wrapper:active {
+  transform: scale(0.95);
+}
+
+.wrapper:hover::after {
+  opacity: 1;
+}
+
+@keyframes ShinyRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  33% {
+    transform: rotate(120deg);
+  }
+
+  66% {
+    transform: rotate(210deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.shiny {
+  filter: blur(5px);
+  position: absolute;
+  inset: 50% -70% -70% 50%;
+  background: linear-gradient(
+    to left,
+    transparent,
+    #8f9c8d,
+    #1f301c,
+    transparent 100%
+  );
+  border-radius: 6px;
+  transition: all 300ms ease;
+  background-repeat: no-repeat;
+  transform-origin: 0 0;
+  display: none;
+}
+
+.button-wrapper:hover .shiny {
+  background-size: 100% 100%;
+  animation: ShinyRotation 2s infinite linear;
+  display: block;
+}
+
+/* Responsive styles */
+/* Instruction #3 - Add any additional styling that is necessary. :) */
+@media (max-width: 886px) {
+  ul {
+    justify-content: center;
+    gap: 1rem 2rem;
+    padding-inline-start: 0;
+  }
+}
+@media (max-width: 836px) {
+  header {
+    justify-content: center;
+  }
+
+  h1 {
+    width: 100%;
+  }
+}
