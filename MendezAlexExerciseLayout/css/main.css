@@ -1,0 +1,109 @@
+/* General Styles*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  margin: 0rem;
+}
+
+/* Element styles */
+
+header {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+  width: 50%;
+  max-width: 18.75rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem 0;
+  text-align: center;
+  text-shadow: 15px 15px 15px #556b2f;
+  color: #1f301c;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #556b2f;
+}
+
+h3 {
+  color: #556b2f;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Image styles */
+
+img {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+/* Link styles */
+
+a {
+  text-decoration: none;
+  color: darkolivegreen;
+}
+
+a:hover {
+  color: #595035;
+}
+
+/* Wrapper styles */
+
+#wrapper {
+  border-left: 5px double darkolivegreen;
+  border-right: 5px double darkolivegreen;
+  width: 80%;
+  margin: auto;
+  padding: 1.25rem;
+  box-shadow: 0 0 20px darkolivegreen;
+}
+
+/* Class Styles  */
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
+/* Responsive styles */
+/* Instruction #3 - Add any additional styling that is necessary. :) */
+@media (max-width: 886px) {
+  ul {
+    justify-content: center;
+    gap: 1rem 2rem;
+    padding-inline-start: 0;
+  }
+}
+@media (max-width: 836px) {
+  header {
+    justify-content: center;
+  }
+
+  h1 {
+    width: 100%;
+  }
+}
