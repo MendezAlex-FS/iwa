@@ -1,0 +1,373 @@
+/* Define CSS Variables */
+:root {
+  --primary-color: #03045e;
+  --secondary-color: #8f9c8d;
+  --base-font-color: #333;
+  --card-background-color: #fff;
+  --font-color-light: #f4f4f4;
+  --background-color: #f4f4f4;
+  --button-background-color: #03045e;
+  --button-font-color: #f4f4f4;
+  --button-hover-color: #2980b9;
+  --button-text-color: #f4f4f4;
+
+  --shadow: 3px 5px 30px var(--secondary-color);
+  --gradient: linear-gradient(
+    to bottom,
+    var(--button-background-color) 0%,
+    var(--button-hover-color) 51%,
+    var(--button-background-color) 100%
+  );
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  font-size: 0.75rem;
+  color: var(--base-font-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Header (Flexbox) */
+header {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  padding: 15px;
+  text-align: center;
+}
+
+header .navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+/* About Section (Grid) */
+.about-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.about-section .photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Place bio and contact in separate rows */
+.about-content .bio {
+  grid-row: 1;
+}
+
+.about-content .contact {
+  grid-row: 2;
+  margin-top: 10px;
+}
+
+/* Favorites Section (Grid) */
+.favorites-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.favorites-section .card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--card-background-color);
+  text-align: center;
+}
+
+.favorites-section .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.favorites-section .card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.favorites-section .card p {
+  margin: 0;
+  color: var(--card-font-color);
+}
+
+/* Socials Section (Flexbox) */
+.socials-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.socials-section a img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Footer (Grid) */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+img {
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 1.25rem 0;
+  padding: 1.25rem 0;
+  text-shadow: var(--shadow);
+  color: var(--background-color);
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: var(--font-color-light);
+  text-decoration: none;
+  text-shadow: var(--shadow);
+}
+
+section ul li a {
+  display: block;
+  color: var(--base-font-color);
+  text-decoration: none;
+  text-shadow: var(--shadow);
+  padding: 5px 0;
+}
+
+section {
+  padding: 20px;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Class Styles  */
+.button {
+  cursor: pointer;
+  text-decoration-line: none;
+}
+
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
+/* Pseudo-class conbinator */
+nav ul li a:hover,
+section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Pseudo-element styles */
+p::first-letter {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--font-color-light);
+  text-align: center;
+  padding: 10px;
+}
+
+#follow h2 {
+  margin-top: unset;
+}
+
+/* Special button styles */
+.button-wrapper {
+  position: relative;
+  text-decoration: none;
+  transition: all 200ms ease;
+  width: 152px;
+  margin: auto;
+}
+
+.inside {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.button {
+  color: var(--button-font-color);
+  background-color: var(--button-background-color);
+  font-weight: bold;
+  background: var(--gradient);
+  padding: 1em 1.5em;
+  font-size: 15px;
+  display: block;
+  transition: all 200ms ease;
+  position: relative;
+  margin: 3px;
+  width: 146px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Pseudo-class styles */
+.button:hover {
+  background: var(--gradient);
+}
+
+.button-wrapper:active {
+  transform: scale(0.95);
+}
+
+.wrapper:hover::after {
+  opacity: 1;
+}
+
+@keyframes ShinyRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  33% {
+    transform: rotate(120deg);
+  }
+
+  66% {
+    transform: rotate(210deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.shiny {
+  filter: blur(5px);
+  position: absolute;
+  inset: 50% -70% -70% 50%;
+  background: var(--gradient);
+  border-radius: 6px;
+  transition: all 300ms ease;
+  background-repeat: no-repeat;
+  transform-origin: 0 0;
+  display: none;
+}
+
+.button-wrapper:hover .shiny {
+  background-size: 100% 100%;
+  animation: ShinyRotation 2s infinite linear;
+  display: block;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  text-decoration: none;
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.linkedin {
+  color: #0077b5;
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
+.github {
+  color: #000;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive styles */
+@media (max-width: 886px) {
+  ul {
+    justify-content: center;
+    gap: 1rem 2rem;
+    padding-inline-start: 0;
+  }
+
+  #wrapper {
+    width: 95%;
+    padding: 0.25rem;
+  }
+}
+
+@media (max-width: 836px) {
+  header {
+    justify-content: center;
+  }
+
+  .about-section,
+  .favorites-section {
+    grid-template-columns: unset;
+  }
+
+  h1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 486px) {
+  img {
+    width: 100%;
+  }
+}
