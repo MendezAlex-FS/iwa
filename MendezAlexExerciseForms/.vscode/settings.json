@@ -1,5 +1,6 @@
 {
-    "editor.formatOnSave": true,
-    "editor.fontSize": 18,
-    "editor.wordWrap": "on"
+  "editor.formatOnSave": true,
+  "editor.fontSize": 18,
+  "editor.wordWrap": "on",
+  "liveServer.settings.port": 5501
 }

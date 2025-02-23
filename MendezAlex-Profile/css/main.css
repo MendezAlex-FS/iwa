@@ -1,0 +1,261 @@
+/* Define CSS Variables */
+:root {
+  --primary-color: #1f301c;
+  --secondary-color: #8f9c8d;
+  --font-color: #333;
+  --font-color-light: #f4f4f4;
+  --background-color: #f4f4f4;
+  --button-hover-color: #2980b9;
+
+  --shadow: 3px 5px 30px var(--secondary-color);
+  --gradient: linear-gradient(178.4deg, #8f9c8d 4.8%, #1f301c 86.7%);
+}
+
+/* General Styles */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  color: var(--font-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--font-color-light);
+  padding: 15px;
+  text-align: center;
+}
+
+img {
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 1.25rem 0;
+  padding: 1.25rem 0;
+  text-shadow: var(--shadow);
+  color: var(--background-color);
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: var(--font-color-light);
+  text-decoration: none;
+  text-shadow: var(--shadow);
+}
+
+section ul li a {
+  display: block;
+  color: var(--font-color);
+  text-decoration: none;
+  text-shadow: var(--shadow);
+  padding: 5px 0;
+}
+
+section {
+  padding: 20px;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Class Styles  */
+.button {
+  cursor: pointer;
+  text-decoration-line: none;
+}
+
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
+/* Pseudo-class conbinator */
+nav ul li a:hover,
+section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Pseudo-element styles */
+p::first-letter {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--font-color-light);
+  text-align: center;
+  padding: 10px;
+}
+
+#follow h2 {
+  margin-top: unset;
+}
+
+/* Special button styles */
+.button-wrapper {
+  position: relative;
+  text-decoration: none;
+  transition: all 200ms ease;
+  width: 152px;
+  margin: auto;
+}
+
+.inside {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.button {
+  color: var(--font-color-light);
+  font-weight: bold;
+  background: var(--gradient);
+  padding: 1em 1.5em;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #1f301c;
+  display: block;
+  transition: all 200ms ease;
+  position: relative;
+  margin: 3px;
+  width: 100px;
+}
+
+/* Pseudo-class styles */
+.button:hover {
+  background: var(--gradient);
+}
+
+.button-wrapper:active {
+  transform: scale(0.95);
+}
+
+.wrapper:hover::after {
+  opacity: 1;
+}
+
+@keyframes ShinyRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  33% {
+    transform: rotate(120deg);
+  }
+
+  66% {
+    transform: rotate(210deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.shiny {
+  filter: blur(5px);
+  position: absolute;
+  inset: 50% -70% -70% 50%;
+  background: var(--gradient);
+  border-radius: 6px;
+  transition: all 300ms ease;
+  background-repeat: no-repeat;
+  transform-origin: 0 0;
+  display: none;
+}
+
+.button-wrapper:hover .shiny {
+  background-size: 100% 100%;
+  animation: ShinyRotation 2s infinite linear;
+  display: block;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  text-decoration: none;
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.linkedin {
+  color: #0077b5;
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
+.github {
+  color: #000;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive styles */
+@media (max-width: 886px) {
+  ul {
+    justify-content: center;
+    gap: 1rem 2rem;
+    padding-inline-start: 0;
+  }
+
+  #wrapper {
+    width: 95%;
+    padding: 0.25rem;
+  }
+}
+
+@media (max-width: 836px) {
+  header {
+    justify-content: center;
+  }
+
+  h1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 486px) {
+  img {
+    width: 100%;
+  }
+}
