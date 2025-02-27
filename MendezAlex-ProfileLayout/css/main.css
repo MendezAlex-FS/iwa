@@ -70,6 +70,7 @@ header .navigation ul {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  max-width: 450px;
 }
 
 /* Place bio and contact in separate rows */
@@ -160,7 +161,8 @@ header img {
 }
 
 h2 {
-  margin-top: 2em;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 nav ul {
@@ -376,5 +378,11 @@ footer {
 @media (max-width: 486px) {
   img {
     width: 100%;
+  }
+}
+
+@media (max-width: 278px) {
+  .footer-item {
+    font-size: x-small;
   }
 }
