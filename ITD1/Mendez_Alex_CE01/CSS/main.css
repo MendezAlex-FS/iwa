@@ -1,11 +1,50 @@
-.background-notwhite {
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0;
+  /* The background is styled correctly and changes the color of the webpage's background. */
   background-color: #e9ecef;
 }
 
-h1 {
-  color: #212529;
+img {
+  display: block;
+  margin: auto 0;
+  /* Make sure your image is scaled properly, it should not be distorted or stretched. */
+  max-width: 720px;
+  width: 100%;
+  height: auto;
 }
 
+/* H1 tag is styled correctly and changes the color of the text. */
+h1 {
+  color: #212529;
+  text-align: center;
+  margin: 15px 0;
+}
+
+/* H3 tag is styled correctly and changes the color of the text. */
 h3 {
   color: #495057;
+  text-align: center;
+  margin: 25px 0 15px;
+}
+
+img {
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  margin: 1.5rem;
+  text-align: center;
 }
