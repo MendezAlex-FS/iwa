@@ -1,84 +1,123 @@
 /*
 Alex Mendez
-3/8/2025
-CE02 Story Time
+3/12/2025
+CE03 Let's Go Shopping
 */
 
-// Alert shows the correct phrase and works correctly.
+// The user is alerted at the beginning of the program with the instructions and the end to check the Console for the final output.
 alert(
   "Welcome Guest, you will be asked a set of questions. " +
     "The information will be use the answers to populate the screen."
 );
 
-// Declare the variables
-let personName;
-let theColor;
-let anyNumber;
-let favoriteMovie;
-let animalType;
-let theAdjective;
+// The user is prompted for the 7 pieces of information in the instructions.
+// Each answer is saved in a variable.
+let item1Name = prompt("What is the name of your item?");
 
-// Next, begin to prompt the user for the following information one at a time. Store each of these answers in a variable.
-personName = prompt("What is your name?");
-theColor = prompt("What color should I use?");
-anyNumber = prompt("Please give me a number?");
-favoriteMovie = prompt("What is your favorite movie?");
-animalType = prompt("What is an animal type?");
-theAdjective = prompt("Enter an adjetive.");
+// All user prompted variables are correctly parsed or cast to numbers.
+// Floats must be used for all money values.
+let item1Price = parseFloat(prompt("How much is each " + item1Name + "?"));
+let item1Count = parseInt(
+  prompt("How many " + item1Name + " do you want to buy?")
+);
+let item2Name = prompt("What is the name of your item?");
 
-// The complete story must be shown in the Console AFTER you have prompted for all variables and the alert tell the user to check the Console.
-alert(
-  "Please check the Console to see your story. You can press F12 or Ctrl+Shift+I to see the console in Chrome."
+// All user prompted variables are correctly parsed or cast to numbers.
+// Floats must be used for all money values.
+let item2Price = parseFloat(prompt("How much is each " + item2Name + "?"));
+let item2Count = parseInt(
+  prompt("How many " + item2Name + " do you want to buy?")
 );
 
-// You will have to incorporate all 6 of the user prompted variables in your story.
-// Make sure to utilize concatenation to add the variables into the text strings.
-// This should be done in multiple console.log statements.
-console.log(
-  personName +
-    " wiped the sweat from his brow as he cast his line into the still waters of Lake " +
-    theColor +
-    ". The moonlight painted the surface silver, reflecting his patience. " +
-    "Fishing was his sanctuary, his escape, the only time when nothing else existed."
-);
+// We only need one more piece of information, so prompt the user for the sales tax.
+// This should be a whole number. For example, the user would type in 5 for a 5% sales tax.
+let salesTax = parseInt(prompt("What is the sales tax?"));
 
-console.log(
-  "As he waited, his mind drifted to an old favorite—" +
-    favoriteMovie +
-    ". He always admired other fishers’ patience, and their ability to outlast time itself." +
-    " Fishing felt the same. It wasn’t about the catch; it was about the wait."
-);
+// Math is used to correctly calculate the Total cost for each item before tax and is stored inside of an appropriately named variable.
+let item1Total = item1Count * item1Price;
+let item2Total = item2Count * item2Price;
 
-console.log(
-  "A sudden pull yanked him from his thoughts. The rod bent sharply—something big was on the line. " +
-    personName +
-    " braced himself, reeling with steady hands. Whatever it was, it fought with a fiery determination."
-);
+// Math is used to correctly calculate the total cost of the of all of the items and is stored inside of an appropriately named variable.
+// The math for this variable should use the 2 variables from the item totals.
+let itemsGross = item1Total + item2Total;
 
-console.log(
-  "Minutes passed. The struggle felt endless. But " +
-    personName +
-    " was stubborn. He wasn’t about to lose his prize now."
-);
+// Math is used to correctly calculate the sales tax cost for all items together.
+// It is stored inside of an appropriately named variable.
+let itemsSalesTax = itemsGross * (salesTax / 100);
 
-console.log(
-  "With one final heave, the creature broke the surface—a massive, silver-scaled " +
-    animalType +
-    ", at least " +
-    anyNumber +
-    " pounds. Its deep black eyes gleamed under the moonlight."
-);
+// Math is used to correctly calculate the grand total cost of all items and the sales tax added together
+// and is stored inside of an appropriately named variable.
+let itemsGrandTotal = itemsGross + itemsSalesTax;
 
+// Thank the customer
+console.log("Thank you for shoping with us!");
+
+// The outputs must use console.log and must contain:
+// 1. Calculated values
+// 2. Supporting descriptive narrative text
+// 3. String concatenation
 console.log(
-  "“Not bad,” " +
-    personName +
-    " muttered, admiring the fish’s " +
-    theAdjective +
-    " form before gently releasing it back into the water."
+  "(" +
+    item1Count +
+    ") " +
+    item1Name +
+    "(s) @ " +
+    item1Price.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 2,
+    }) +
+    " = " +
+    item1Total.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 2,
+    })
 );
 
 console.log(
-  "Some things were meant to be free. Just like Andy escaping Shawshank. Just like " +
-    personName +
-    ", lost in his midnight ritual."
+  "(" +
+    item2Count +
+    ") " +
+    item2Name +
+    "(s) @ " +
+    item2Price.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 2,
+    }) +
+    " = " +
+    item2Total.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 2,
+    })
+);
+
+console.log(
+  "Subtotal Before Tax = " +
+    itemsGross.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 2,
+    })
+);
+
+console.log(
+  salesTax +
+    "% Sales Tax = " +
+    itemsSalesTax.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 3,
+    })
+);
+
+console.log(
+  "Grand Total = " +
+    itemsGrandTotal.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 3,
+    })
 );
