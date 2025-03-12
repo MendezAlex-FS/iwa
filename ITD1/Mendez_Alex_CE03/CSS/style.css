@@ -1,0 +1,16 @@
+/* General Styles */
+
+body {
+  /* The background is styled correctly and changes the color of the webpage's background. */
+  background-color: #e9ecef;
+}
+
+/* H1 tag is styled correctly and changes the color of the text. */
+h1 {
+  color: #212529;
+}
+
+/* H3 tag is styled correctly and changes the color of the text. */
+h3 {
+  color: #495057;
+}
