@@ -1,149 +1,110 @@
 /*
 Alex Mendez
-3/14/2025
-CE04 Conditionals
+3/23/2025
+CE05 QuerySelector
 */
 
-// Common flag for error
-let isError = false;
-
-// The user is alerted at the beginning of the program with the instructions and the end to check the Console for the final output.
+// Say what we are doing.
 alert(
-  "Welcome Guest, you will be asked a set of questions. " +
-    "The information will be use to populate the screen."
+  "Hello and welcome to the Discount Double check." +
+    "You will be asked to provide the prices of two items, " +
+    "which will be used to calculate the total, including any applicable discounts."
 );
 
-// Prompt the user for the number grade, assume the grade is a whole number.
-let grade = parseInt(prompt("Enter a grade from 0 to 100?"));
-let gradeLetter;
+// You will be prompting the user for the price of 2 items bought at a store
+let cost1 = parseFloat(prompt("Cost of First Item (in $)"));
+let cost2 = parseFloat(prompt("Cost of Second Item (in $)"));
 
-// Determine the appropriate letter grade for that number using conditional statements.
-if (grade >= 90 && grade <= 100) {
-  gradeLetter = "A";
-} else if (grade >= 80 && grade <= 89) {
-  gradeLetter = "B";
-} else if (grade >= 70 && grade <= 79) {
-  gradeLetter = "C";
-} else if (grade >= 60 && grade <= 69) {
-  gradeLetter = "D";
-} else if (grade >= 0 && grade <= 59) {
-  gradeLetter = "F";
+let total = cost1 + cost2;
+let discount = 0;
+let discountDisplay = "";
+let resultsClass = "";
+let message = "";
+
+// Figure out the discount
+if (total >= 100) {
+  discount = 0.1;
+  discountDisplay = "10%";
+  resultsClass = "green-result";
+} else if (total >= 50) {
+  discount = 0.05;
+  discountDisplay = "5%";
+  resultsClass = "green-result";
 } else {
-  isError = true;
+  discountDisplay = "no";
+  resultsClass = "yellow-result";
 }
 
-// There should be only one printout to the console.
-if (!isError) {
-  console.log(
-    "You have a(n) " +
-      grade +
-      "%, which means you have earned a(n) " +
-      gradeLetter +
-      " in the class!"
-  );
+// Give them a discount based on their total
+if (discount > 0) {
+  let finalTotal = total - total * discount;
+  message =
+    "Your total purchase is " +
+    finalTotal.toFixed(2) +
+    ", which includes your " +
+    discountDisplay +
+    " discount.";
 } else {
-  console.log(
-    "You must enter a number from 0 to 100. Please refresh the page and try again."
-  );
+  message = "Your total purchase is $" + total.toFixed(2) + ".";
 }
 
-// Reset error flag
-isError = false;
+// Show the result in an element using querySelector
+const results = document.querySelector("#results");
+results.innerHTML = message;
+results.classList.add(resultsClass);
 
-// Alert for next section
-alert("Now, lets do the Pumpkin Patch Pickers.");
+// Rest reusables
+message = "";
+resultsClass = "";
 
-// Prompt the user for the number grade, assume the grade is a whole number.
-let weight = parseFloat(prompt("Enter the weight of your pumpkin."));
-let pricePerPound = 0.0;
+// Let them know we are checking on their gas.
+alert("Now, let's see if you can cross the desert with the gas you have!");
 
-// Determine the appropriate letter grade for that number using conditional statements.
-if (weight < 5.5) {
-  pricePerPound = 1.0;
-} else if (weight >= 5.5 && weight < 10.75) {
-  pricePerPound = 0.9;
-} else if (weight >= 10.75 && weight < 25) {
-  pricePerPound = 0.8;
-} else if (weight >= 25 && weight < 50) {
-  pricePerPound = 0.7;
-} else if (weight >= 50 && weight <= 100) {
-  pricePerPound = 0.6;
-} else if (weight > 100) {
-  pricePerPound = 0.5;
-} else {
-  isError = true;
-}
-
-let price = weight * pricePerPound;
-
-// There should be only one printout to the console.
-if (weight > 0) {
-  console.log(
-    "Your pumpkin of " +
-      weight +
-      "lbs costs " +
-      price.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        maximumFractionDigits: 2,
-      }) +
-      "."
-  );
-} else {
-  console.log(
-    "The weight of the pumpkin must be greater than 0. Please refresh the page and enter a positive value."
-  );
-}
-
-// Reset error flag
-isError = false;
-
-// Alert for next section
-alert("Now, lets do the Loyalty Card.");
-
-// Ask for first item
-let item1Price = parseFloat(prompt("Enter the price for item 1?"));
-
-// Ask for second item
-let item2Price = parseFloat(prompt("Enter the price for item 2?"));
-
-// Ask if it is a preferred customer.
-let preferredCustomer = prompt(
-  'Are you a preferred customer? (Please enter "yes" or "no")'
+let maxGallons = parseInt(
+  prompt("What is the maximum number of gallons your car tank holds?")
 );
-let isPreferred = preferredCustomer == "yes";
+let gasPercent = parseInt(prompt("How full is your gas tank? (in %)"));
+let milePerGalon = parseInt(
+  prompt("How many miles per gallon does your car get?")
+);
 
-// Do calculations
-let total = item1Price + item2Price;
-let discount = total * 0.15;
-let totalDiscounted = total - discount;
+const gallonsLeft = maxGallons * (gasPercent / 100);
+const milesCanGo = gallonsLeft * milePerGalon;
+let imageSource = "";
+let imageAltText = "Not enough gas";
 
-// print results
-if (isPreferred) {
-  // Log for preferred customer
-  console.log(
-    "Your total purchase is " +
-      totalDiscounted.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        maximumFractionDigits: 3,
-      }) +
-      ", which includes your 15% discount."
-  );
-} else if (preferredCustomer == "no") {
-  // Log for regular customer
-  console.log(
-    "Your total purchase is " +
-      total.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        maximumFractionDigits: 3,
-      }) +
-      "."
-  );
+if (milesCanGo >= 200) {
+  resultsClass = "green-result";
+  imageSource = "IMG/enoughGas.jpg";
+  imageAltText = "You have enough gas image";
+  message =
+    "Yes, you can drive " +
+    milesCanGo +
+    " miles and you can make it without stopping for gas!";
 } else {
-  // Log for error
-  console.log(
-    "You have typed in something wrong and I can not calculate the total."
-  );
+  resultsClass = "yellow-result";
+  imageSource = "IMG/notEnoughGas.jpg";
+  imageAltText = "Not enough gas image";
+  message =
+    "You can only drive " +
+    milesCanGo +
+    " miles more, better get gas now while you can!";
 }
+
+// Add events to buttons
+document
+  .querySelector("#showTextAnswer")
+  .addEventListener("click", function (e) {
+    const textResults = document.querySelector("#textResults");
+    textResults.innerHTML = message;
+    textResults.classList = "";
+    textResults.classList.add(resultsClass);
+  });
+document
+  .querySelector("#showGraphicsAnswer")
+  .addEventListener("click", function (e) {
+    const imageResults = document.querySelector("#imageResults");
+    imageResults.src = imageSource;
+    imageResults.alt = imageAltText;
+    imageResults.classList = "";
+  });

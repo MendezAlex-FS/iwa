@@ -1,17 +1,28 @@
-/* The CSS Stylesheet is properly linked and formats at least 2 elements on the HTML page. */
 /* General Styles */
 
 body {
-  /* The background is styled correctly and changes the color of the webpage's background. */
   background-color: #e9ecef;
 }
 
 /* H1 tag is styled correctly and changes the color of the text. */
 h1 {
-  color: #212529;
+  color: #ff0000;
 }
 
-/* H3 tag is styled correctly and changes the color of the text. */
-h3 {
-  color: #495057;
+/* hide results */
+.no-result {
+  display: none;
+}
+
+/* green results */
+.green-result {
+  background-color: #003300;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.yellow-result {
+  background-color: #ffff00;
+  color: #000;
+  font-size: 1.5rem;
 }

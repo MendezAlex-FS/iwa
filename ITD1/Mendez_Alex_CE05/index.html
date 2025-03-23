@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
 Alex Mendez
-3/14/2025
-CE04 Conditionals
+3/23/2025
+CE05 QuerySelector
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CE04 Conditionals</title>
+    <title>CE04 QuerySelector</title>
     <!-- 
     The HTML page is properly linked to the CSS and JS files. It contains at least 2 other HTML tags.
     The CSS Stylesheet is properly linked and formats at least 2 elements on the HTML page.
@@ -16,14 +16,31 @@ CE04 Conditionals
     <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
-    <!-- H1, H3, and P tags are all used. -->
-    <h1>Conditionals</h1>
-    <h3>Conditionals are fun.</h3>
+    <!-- Create an h1 header for this section. Remember you can use <br> if you need a break on your page to help the overall look. -->
+    <h1>Problem #1 - Discount Double Check!</h1>
+    <div id="results" class="results"></div>
 
-    <p>
-      Please check the Console to see your results. You can press F12 or
-      Ctrl+Shift+I to see the console in Chrome.
-    </p>
+    <!-- Create an h1 header for this section. -->
+    <h1>Problem #2 - Last Gas Station For Miles!</h1>
+
+    <button id="showTextAnswer" type="button">Show Text Answer</button>
+    <button id="showGraphicsAnswer" type="button">Show Graphics Answer</button>
+
+    <br />
+    <br />
+
+    <!-- For the final results, create an h1 tag and 1 and only 1 img tag in your HTML. -->
+    <h1 id="textResults" class="no-result"></h1>
+    <br />
+    <img
+      id="imageResults"
+      alt="No Image Source"
+      class="no-result"
+      width="740"
+      height="555"
+      src="IMG/notEnoughGas.jpg"
+    />
+
     <!-- The HTML page is properly linked to the CSS and JS files. It contains at least 2 other HTML tags. -->
     <script src="JS/script.js"></script>
   </body>
