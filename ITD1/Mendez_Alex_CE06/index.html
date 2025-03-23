@@ -2,46 +2,69 @@
 <!--
 Alex Mendez
 3/23/2025
-CE05 QuerySelector
+CE06 Html Forms
 -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CE04 QuerySelector</title>
-    <!-- 
-    The HTML page is properly linked to the CSS and JS files. It contains at least 2 other HTML tags.
-    The CSS Stylesheet is properly linked and formats at least 2 elements on the HTML page.
-    -->
-    <link rel="stylesheet" href="CSS/style.css" />
-  </head>
-  <body>
-    <!-- Create an h1 header for this section. Remember you can use <br> if you need a break on your page to help the overall look. -->
-    <h1>Problem #1 - Discount Double Check!</h1>
-    <div id="results" class="results"></div>
 
-    <!-- Create an h1 header for this section. -->
-    <h1>Problem #2 - Last Gas Station For Miles!</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CE06 Html Forms</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
 
-    <button id="showTextAnswer" type="button">Show Text Answer</button>
-    <button id="showGraphicsAnswer" type="button">Show Graphics Answer</button>
+<body>
+  <!-- Add the fill'er up! section -->
+  <h1>Fill'er Up!</h1>
+  <h2>The below form will help you convert gallons of milk to other measurements.</h2>
+  <h3>Type in the number of gallons, select a convertion and press the button!</h3>
 
-    <br />
-    <br />
+  <form id="converter">
+    <input type="number" name="gallons" id="gallons" min="0.01" step="0.01" required><label for="gallons"># of Gallons
+      To Convert</label><br><br>
 
-    <!-- For the final results, create an h1 tag and 1 and only 1 img tag in your HTML. -->
-    <h1 id="textResults" class="no-result"></h1>
-    <br />
-    <img
-      id="imageResults"
-      alt="No Image Source"
-      class="no-result"
-      width="740"
-      height="555"
-      src="IMG/notEnoughGas.jpg"
-    />
+    <fieldset>
+      <legend>What would you like to convert gallons to?</legend>
+      <input type="radio" name="measurements" value="quartz" id="quartz" checked><label for="quartz">Quartz</label>
+      <input type="radio" name="measurements" value="pints" id="pints"><label for="pints">Pints</label>
+      <input type="radio" name="measurements" value="cups" id="cups"><label for="cups">Cups</label>
+    </fieldset><br><br>
 
-    <!-- The HTML page is properly linked to the CSS and JS files. It contains at least 2 other HTML tags. -->
-    <script src="JS/script.js"></script>
-  </body>
+    <input type="button" value="Convert Gallons" id="convertButton">
+
+    <h2>Converted Values</h2>
+
+    <input type="text" name="quartsResult" id="quartsResult" placeholder="Press the button" readonly><label
+      for="quartsResult">Quartz</label><br>
+    <input type="text" name="pintsResult" id="pintsResult" placeholder="Press the button" readonly><label
+      for="pintsResult">Pints</label><br>
+    <input type="text" name="cupsResult" id="cupsResult" placeholder="Press the button" readonly><label
+      for="cupsResult">Cups</label>
+  </form>
+
+  <br><br>
+
+  <!-- Add the movie start section -->
+  <h1>Movie Star</h1>
+  <h2>We will total the number of movies the user has in multiple formats and determine what ranking they are in a movie
+    club.</h2>
+  <h3>Fill in the number of each type of movies you have and then press the button to see the rank!</h3>
+
+  <form id="movies">
+    <input type="number" name="dvds" id="dvds" step="1" min="1" required><label for="dvds">Dvds</label><br>
+    <input type="number" name="bluRays" id="bluRays" step="1" min="1" required><label for="bluRays">Blu-Rays</label><br>
+    <input type="number" name="ultraViolets" id="ultraViolets" step="1" min="1" required><label for="ultraViolets">Ultra
+      Violets</label>
+    <br><br>
+    <input type="button" value="See Ranking" id="rankingButton">
+    <br>
+    <h1 id="collectionResults"></h1>
+    <img src="IMG/bronzeStar.jpg" alt="Collection rank level image" id="rankLevelImage" width="860" height="645"
+      class="no-result">
+  </form>
+
+  <!-- The HTML page is properly linked to the CSS and JS files. It contains at least 2 other HTML tags. -->
+  <script src="JS/script.js"></script>
+</body>
+
 </html>
