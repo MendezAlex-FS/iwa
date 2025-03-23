@@ -1,0 +1,28 @@
+/* General Styles */
+
+body {
+  background-color: #e9ecef;
+}
+
+/* H1 tag is styled correctly and changes the color of the text. */
+h1 {
+  color: #ff0000;
+}
+
+/* hide results */
+.no-result {
+  display: none;
+}
+
+/* green results */
+.green-result {
+  background-color: #003300;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.yellow-result {
+  background-color: #ffff00;
+  color: #000;
+  font-size: 1.5rem;
+}
