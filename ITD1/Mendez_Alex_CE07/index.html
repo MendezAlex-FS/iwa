@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Alex Mendez
+3/30/2025
+CE07 Body Mass Calculator
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CE07 Body Mass Calculator</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+  <!-- Add the fill'er up! section -->
+  <h1>Body Mass Calculator</h1>
+  <h2>We can hlp you find your BMI with a few simple questions.</h2>
+  <h3>Type in the height and weight and press the button!</h3>
+
+  <form id="converter">
+    <label for="height">HEIGHT </label><br> <br>
+    <!-- Fun fact, the tallest man was 8' 2.82", so make max 8 feet  -->
+    <input type="number" name="feet" id="feet" min="0" max="8" required><label for="feet">feet (ft)</label>
+    <!-- Allow only 11.9 as 12 inches is 1 feet -->
+    <input type="number" name="inches" id="inches" min="0" step="0.1" max="12" required><label for="inches">inches
+      (in)
+    </label><br><br>
+
+    <label for="pounds">WEIGHT</label><br><br>
+    <input type="number" name="weight" id="weight" min="0" step="0.1" max="1400" required><label for="weight">pounds
+      (lbs)
+    </label><br><br>
+
+    <input type="button" value="Get BMI" id="convertButton">
+
+    <br>
+    <h1 id="textResults"></h1>
+    <img src="IMG/healthyWeight.jpg" alt="BMI result image" id="imageResults" width="720" height="540"
+      class="no-result">
+
+  </form>
+
+  <!-- The HTML page is properly linked to the CSS and JS files. It contains at least 2 other HTML tags. -->
+  <script src="JS/script.js"></script>
+</body>
+
+</html>
