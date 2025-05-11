@@ -2,7 +2,13 @@
 
 (function () {
     // Decalre the variables.
-    let guesses = 1, currentLevel = 1, userNumber, score = 0, randomNumber, playerName, playerHighScore = 0;
+    let guesses = 1,
+        currentLevel = 1,
+        userNumber,
+        score = 0,
+        randomNumber,
+        playerName,
+        playerHighScore = 0;
 
     // Start the game.
     playerName = prompt("Welcome to the guessing game! What's your name?");
@@ -55,7 +61,9 @@
     // This handles replay or ending the game.
     function gameOver() {
         // Ask the player if you want to play again goes here.
-        const playAgain = prompt("Game over! Would you like to play again? (y/n)").toUpperCase();
+        const playAgain = prompt(
+            "Game over! Would you like to play again? (y/n)")
+            .toUpperCase();
 
         // Check if the player wants to play again.
         if (playAgain === "Y" || playAgain === "YES") {
