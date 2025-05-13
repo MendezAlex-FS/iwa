@@ -4,7 +4,8 @@
 
     // Use a For Loop to display the numbers 1 through 10 in ascending order.
     function question1() {
-        console.log("Question 1\n----------\n");
+        console.log("Question 1");
+        console.log("----------");
 
         for (let i = 1; i <= 10; i++) {
             console.log(i);
@@ -14,7 +15,8 @@
 
     // Use a For Loop to display the numbers 10 through 0 in descending order.
     function question2() {
-        console.log("Question 2\n----------\n");
+        console.log("Question 2");
+        console.log("----------");
 
         for (let i = 10; i >= 0; i--) {
             console.log(i);
@@ -26,7 +28,8 @@
     // even numbers between 10 and 50. The iterator variable 'i' must 
     // still be i++, NOT i+=2.
     function question3() {
-        console.log("Question 3\n----------\n");
+        console.log("Question 3");
+        console.log("----------");
 
         for (let i = 10; i <= 50; i++) {
             if (i % 2 === 0) {
@@ -40,7 +43,8 @@
     // show the result in the console. This will require you to create 
     // a variable named "score", do NOT use the iterator in the loop.
     function question4() {
-        console.log("Question 4\n----------\n");
+        console.log("Question 4");
+        console.log("----------");
 
         let score = 0;
         for (let i = 1; i <= 20; i++) {
@@ -57,7 +61,8 @@
     // the number 3 is rolled. Do NOT use a Do While Loop, break, 
     // or anything else that wasn't covered in class.
     function question5() {
-        console.log("Question 5\n----------\n");
+        console.log("Question 5");
+        console.log("----------");
 
         let roll = 0, rollIndex = 1;
         while (roll !== 3) {
