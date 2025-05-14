@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise: Data Visualization</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <h1>Exercise: Data Visualization</h1>
+    <h2>My LinkedIn Views Per Day</h2>
+    <main>
+        <form id="viewsForm">
+            <label for="minViews">Lowest Views:</label>
+            <input id="minViews" name="minViews" type="number" min="0" required>
+            <label for="maxViews">Highest Views:</label>
+            <input id="maxViews" name="maxViews" type="number" min="0" required>
+            <button type="submit">Show Graph</button>
+        </form>
+
+        <div id="graphArea">
+            <canvas width="500" height="450"></canvas>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

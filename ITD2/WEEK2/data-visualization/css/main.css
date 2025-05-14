@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+div {
+    margin-top: 20px;
+}
+
+canvas {
+    border: 1px solid darkblue;
+}
+
+input {
+    width: 60px;
+}
+
+label:last-of-type,
+button {
+    margin-left: 25px;
+}
+
+p#averageViews {
+    width: 31.25rem;
+    text-align: center;
+}
