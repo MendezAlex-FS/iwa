@@ -21,6 +21,10 @@ p {
     top: -65px;
 }
 
+form {
+    padding-bottom: 20px;
+}
+
 button,
 #maxViewsLabel {
     margin-left: 25px;

@@ -12,7 +12,7 @@
     <h1>Exercise: Data Visualization</h1>
     <h2>My LinkedIn Views Per Day</h2>
     <main>
-        <form id="viewsForm">
+        <form>
             <label for="minViews">Lowest Views:</label>
             <input id="minViews" name="minViews" type="number" min="0" required>
             <label id="maxViewsLabel" for="maxViews">Highest Views:</label>
@@ -20,10 +20,8 @@
             <button type="submit">Show Graph</button>
         </form>
 
-        <div id="graphArea">
-            <canvas width="500" height="450"></canvas>
-            <p></p>
-        </div>
+        <canvas width="500" height="450"></canvas>
+        <p></p>
     </main>
     <script src="js/main.js"></script>
 </body>
