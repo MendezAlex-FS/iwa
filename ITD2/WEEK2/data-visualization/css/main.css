@@ -14,12 +14,14 @@ input {
     width: 60px;
 }
 
-label:last-of-type,
-button {
-    margin-left: 25px;
-}
-
-p#averageViews {
+p {
     width: 31.25rem;
     text-align: center;
+    position: relative;
+    top: -65px;
+}
+
+button,
+#maxViewsLabel {
+    margin-left: 25px;
 }

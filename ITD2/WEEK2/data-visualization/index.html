@@ -15,13 +15,14 @@
         <form id="viewsForm">
             <label for="minViews">Lowest Views:</label>
             <input id="minViews" name="minViews" type="number" min="0" required>
-            <label for="maxViews">Highest Views:</label>
+            <label id="maxViewsLabel" for="maxViews">Highest Views:</label>
             <input id="maxViews" name="maxViews" type="number" min="0" required>
             <button type="submit">Show Graph</button>
         </form>
 
         <div id="graphArea">
             <canvas width="500" height="450"></canvas>
+            <p></p>
         </div>
     </main>
     <script src="js/main.js"></script>
