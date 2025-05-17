@@ -1,13 +1,16 @@
 "use strict";
 
 (function () {
-    const button = document.querySelector("button");
+    // Define the constants
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
     const averageViews = document.querySelector("p");
+    const button = document.querySelector("button");
 
+    // Add handler to button using createChart function.
     button.addEventListener("click", createChart);
 
+    // Only 1 function should be created.
     function createChart(e) {
         // Stop the button from posting
         e.preventDefault();
