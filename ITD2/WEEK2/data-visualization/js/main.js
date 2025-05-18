@@ -41,7 +41,8 @@
 
             for (let i = 0; i < 7; i++) {
                 // Generate the bar number for the bar
-                const randomNumber = Math.floor(Math.random() * (maxViews - minViews + 1)) + minViews;
+                const randomNumber = Math.floor(Math.random() *
+                    (maxViews - minViews + 1)) + minViews;
                 total += randomNumber;
 
                 // We can't use arrays, so get the bottom label for the bar created.
