@@ -7,7 +7,7 @@ class Order {
         this.price = parseFloat(price);
     }
 
-    // Total the cost of the order.
+    // Total the cost of a order.
     totalCost() {
         // toFixed was leared in ITD1
         return (this.quantity * this.price).toFixed(2);
@@ -23,13 +23,16 @@ class Main {
         this.totalResult = document.querySelector("#totalResult");
         this.outputRows = "";
 
-        this.button.addEventListener("click", (e) => {
-            e.preventDefault();
-            this.add();
-        });
+        // Using the function to bind the click. 
+        // It is good practice as arrow functions do not support "this".
+        // Also, you can't remove the listener when you use arrows.
+        this.button.addEventListener("click", this.add);
     }
 
-    add = () => {
+    add = (e) => {
+        e.preventDefault();
+        console.log(this);
+
         const inputs = this.form.querySelectorAll("input");
         let isValid = true;
 
@@ -82,9 +85,12 @@ class Main {
         let totals = 0;
         const totalValues = document.querySelectorAll(".cost-cell");
 
-        for (let i = 0; i < totalValues.length; i++) {
-            totals += parseFloat(totalValues[i].textContent);
-        }
+        totalValues.forEach((total) => {
+            totals += parseFloat(total.textContent);
+        });
+        // for (let i = 0; i < totalValues.length; i++) {
+        //     totals += parseFloat(totalValues[i].textContent);
+        // }
 
         this.totalResult.innerHTML = `
         <div class="table no-top-border">
@@ -102,7 +108,7 @@ class Main {
     };
 }
 
-// An IFFE that on instantiates the Main class.
+// An IFFE that only instantiates the Main class.
 (() => {
     const main = new Main();
 })();
