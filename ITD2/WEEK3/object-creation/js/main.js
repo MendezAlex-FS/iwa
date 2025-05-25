@@ -88,9 +88,6 @@ class Main {
         totalValues.forEach((total) => {
             totals += parseFloat(total.textContent);
         });
-        // for (let i = 0; i < totalValues.length; i++) {
-        //     totals += parseFloat(totalValues[i].textContent);
-        // }
 
         this.totalResult.innerHTML = `
         <div class="table no-top-border">
