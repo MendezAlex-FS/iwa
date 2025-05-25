@@ -1,0 +1,107 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
+    overflow: hidden;
+}
+
+form {
+    padding: 20px;
+    width: 450px;
+    background-color: #ebebeb;
+}
+
+.output {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.output>div {
+    min-width: 626px;
+}
+
+label {
+    display: inline-block;
+    width: 80%;
+    height: 25px;
+    border-bottom: dashed 1px black;
+}
+
+form div {
+    display: flex;
+    align-items: baseline;
+    width: 450px;
+    justify-content: flex-end;
+    height: 40px;
+}
+
+input {
+    width: 100%;
+    height: 25px;
+    margin-left: 15px;
+}
+
+button {
+    width: 33%;
+    height: 40px;
+}
+
+span {
+    display: block;
+    margin: 10px 0;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.row {
+    display: contents;
+}
+
+.header {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.cell {
+    padding: 10px;
+    border-left: 1px solid #ccc;
+    min-width: 104px;
+}
+
+.cost-cell,
+.price-cell,
+.cost-cell-t,
+.cost-cell-h,
+.quantity-cell {
+    text-align: right;
+}
+
+.cost-cell,
+.cost-cell-t,
+.cost-cell-h {
+    border-right: 1px solid #ccc;
+}
+
+.item-cell,
+.customer-cell {
+    text-align: left;
+}
+
+.top-bottom-border {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.bottom-border {
+    border-bottom: 1px solid #ccc;
+}
+
+.align-right {
+    text-align: right;
+}
