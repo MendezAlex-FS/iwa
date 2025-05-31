@@ -80,36 +80,6 @@ class Main {
     this.rating = document.createElement('p');
     this.duration = document.createElement('p');
 
-    /****** START - Create Previous Button ******/
-    // Create the previous button
-    const previousButton = document.createElement('button');
-    previousButton.textContent = "Previous";
-    previousButton.className = "button";
-    previousButton.addEventListener("click", () => this.previousMovie());
-
-    // Create a wrapper div
-    const previousWrapperDiv = document.createElement("div");
-    previousWrapperDiv.className = "button-wrapper";
-
-    // Create a div inside the wrapper. This makes the thikness
-    // of the snake.
-    const previousInsideDiv = document.createElement("div");
-    previousInsideDiv.className = "inside";
-
-    // Create a div which will be rotated constantly
-    // to make the effect of a snake going around the button
-    const previousShinyDiv = document.createElement("div");
-    previousShinyDiv.className = "shiny";
-
-    // Add the inside div to the container div
-    // Then add the shiny div and buttong to the inside div
-    previousWrapperDiv.append(previousInsideDiv);
-    previousInsideDiv.append(previousShinyDiv, previousButton);
-    /****** END - Create Previous Button ******/
-
-    // This could have been avoided if we were allowed to create 
-    // a method with parameters of a label and the arrow handler function
-
     /****** START - Create Next Button ******/
     // Create the next button. 
     const nextButton = document.createElement('button');
@@ -136,6 +106,38 @@ class Main {
     nextWrapperDiv.append(nextInsideDiv);
     nextInsideDiv.append(nextShinyDiv, nextButton);
     /****** END - Create Next Button ******/
+
+    // The previous button code could have been avoided 
+    // if we were allowed to create a method with parameters 
+    // of a label and the arrow handler function. But, function
+    // with handler parameters have not been thought.
+
+    /****** START - Create Previous Button ******/
+    // Create the previous button
+    const previousButton = document.createElement('button');
+    previousButton.textContent = "Previous";
+    previousButton.className = "button";
+    previousButton.addEventListener("click", () => this.previousMovie());
+
+    // Create a wrapper div
+    const previousWrapperDiv = document.createElement("div");
+    previousWrapperDiv.className = "button-wrapper";
+
+    // Create a div inside the wrapper. This makes the thikness
+    // of the snake.
+    const previousInsideDiv = document.createElement("div");
+    previousInsideDiv.className = "inside";
+
+    // Create a div which will be rotated constantly
+    // to make the effect of a snake going around the button
+    const previousShinyDiv = document.createElement("div");
+    previousShinyDiv.className = "shiny";
+
+    // Add the inside div to the container div
+    // Then add the shiny div and buttong to the inside div
+    previousWrapperDiv.append(previousInsideDiv);
+    previousInsideDiv.append(previousShinyDiv, previousButton);
+    /****** END - Create Previous Button ******/
 
     // Add all the top level elements to the body. 
     // We should have a main tag in html were we insert these. 
