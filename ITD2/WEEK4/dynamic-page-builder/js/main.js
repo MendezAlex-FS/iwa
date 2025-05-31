@@ -164,7 +164,7 @@ class Main {
     this.duration.innerHTML = `<strong>Duration:</strong> ${Utils.convertTime(movie.duration)}`;
   }
 
-  // Method to go to previous movie
+  // Function/method to go to previous movie
   previousMovie() {
     console.log("Show previous movie");
     this.movieNumber--;
@@ -175,7 +175,7 @@ class Main {
     this.showMovie();
   }
 
-  // Method to go to next movie
+  // Function/method to go to next movie
   nextMovie() {
     console.log("Show next movie");
     this.movieNumber++;
